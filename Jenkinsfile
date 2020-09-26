@@ -1,6 +1,9 @@
 #!groovy
 def name
 def changelog
+def fun1(){
+    echo "testing my last case"
+}
 node{
     stage("checkout"){
         checkout(scm)
@@ -13,9 +16,6 @@ node{
     }
     stage("test2"){
         echo "test2"
-        def fun1(){
-            echo "testing my last case"
-        }
     }
     stage("test3"){
         fun1()
