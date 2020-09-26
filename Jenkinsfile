@@ -7,6 +7,7 @@ def fun1(){
 }
 def environment
 properties([
+  buildDiscarder(logRotator(daysToKeepStr: '2', numToKeepStr: '2')),
   parameters([
     string(name: 'environement', defaultValue: 'staging', description: 'where am i?', )
    ])
