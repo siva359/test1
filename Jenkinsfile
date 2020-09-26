@@ -3,6 +3,7 @@ def name
 def changelog
 def fun1(){
     echo "testing my last case"
+    echo "${params.environment} finally i am working"
 }
 def environment
 node{
