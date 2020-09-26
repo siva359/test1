@@ -2,7 +2,8 @@
 def name="siva"
 node{
     stage("checkout"){
-        checkout()
+        checkout(scm)
+        echo "Cloning completed"
     }
     stage("test1"){
         echo "test1"
