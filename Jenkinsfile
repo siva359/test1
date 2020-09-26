@@ -4,7 +4,11 @@ def changelog
 def fun1(){
     echo "testing my last case"
 }
+def environment
 node{
+    parameters {
+        string(name: 'environment', description: 'tell me where i am')
+    }
     stage("checkout"){
         checkout(scm)
         echo "Cloning completed"
