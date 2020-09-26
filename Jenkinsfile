@@ -2,7 +2,7 @@
 def name="siva"
 node{
     stage("checkout"){
-        echo "how are you!!!!"
+        checkout()
     }
     stage("test1"){
         echo "test1"
