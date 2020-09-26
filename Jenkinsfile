@@ -6,11 +6,9 @@ def fun1(){
     echo "${params.environment} finally i am working"
 }
 def environment
-properties([
-    parameters([
-        string(name: 'DEPLOY_ENV', defaultValue: 'TESTING', description: 'The target environment', )
-    ])
-])
+parameters{
+    string(name: 'environment', defaultValue: 'production', description: 'tell me where i am now', )
+}
 node{
 
     stage("checkout"){
