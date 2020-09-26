@@ -6,10 +6,13 @@ def fun1(){
     echo "${params.environment} finally i am working"
 }
 def environment
+properties([
+    parameters([
+        string(name: 'DEPLOY_ENV', defaultValue: 'TESTING', description: 'The target environment', )
+    ])
+])
 node{
-    parameters {
-        string(name: 'environment', description: 'tell me where i am')
-    }
+
     stage("checkout"){
         checkout(scm)
         echo "Cloning completed"
