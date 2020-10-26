@@ -30,6 +30,6 @@ spec:
         - name: appport
           targetPort: appport
           port: 8081
-          nodePort: 30000
+          nodePort: 30002
     type: NodePort
   
