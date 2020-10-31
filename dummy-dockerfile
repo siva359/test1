@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 USER root
-RUN echo 'nameserver 8.8.8.8' resolv.conf
-RUN cp resolv.conf /etc/resolv.conf
+#RUN echo 'nameserver 8.8.8.8' resolv.conf
+#RUN cp resolv.conf /etc/resolv.conf
 RUN apt-get update && apt-get upgrade -y
 CMD ["ping"]
 ENTRYPOINT ["google.com"]
