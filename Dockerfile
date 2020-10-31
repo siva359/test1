@@ -1,5 +1,5 @@
 FROM python:latest
-WOKDIR /app
+WORKDIR /app
 RUN pip install flask
 COPY 111.py app.py
 ENTRYPOINT ["python","app.py"]

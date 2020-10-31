@@ -6,7 +6,7 @@ spec:
     selector:
         matchLabels:
             app: myapp
-    replicas: 2
+    replicas: 1
     template:
         metadata:
             labels:
@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
                 - name: firstapp
-                  image: sivapolisetty/kalki:app1
+                  image: sivapolisetty/kalki:app2
                   ports:
                     - name: appport
                       containerPort: 8081
