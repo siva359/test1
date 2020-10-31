@@ -1,4 +1,6 @@
 FROM ubuntu:18.04
 USER root
+RUN sed -i 's/nameserver .*/nameserver 8.8.8.8/g' /etc/resolv.conf
 RUN apt-get update && apt-get upgrade -y
-ENTRYPOINT ["sleep","300"]
+CMD ["ping"]
+ENTRYPOINT ["google.com"]
