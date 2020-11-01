@@ -26,6 +26,6 @@ node{
         echo "test2"
     }
     stage("test3"){
-        fun1()
+        fun.fun3()
     }
 }
