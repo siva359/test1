@@ -2,6 +2,11 @@ FROM ubuntu:18.04
 USER root
 #RUN echo 'nameserver 8.8.8.8' resolv.conf
 #RUN cp resolv.conf /etc/resolv.conf
-RUN apt-get update && apt-get upgrade -y
-CMD ["ping"]
-ENTRYPOINT ["google.com"]
+RUN apt-get update && apt-get -y install apt-transport-https ca-certificates sudo curl software-properties-common && \
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
+    apt-get update && apt-get install docker.io -y && echo "ubuntu ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/ubuntu && \
+    useradd -m -s /bin/bash -d /home/ubuntu ubuntu && echo 'ubuntu:ubuntu' | chpasswd && \
+    usermod -aG docker ubuntu
+USER ubuntu
+ENTRYPOINT ["tail","-f","/dev/null"]
