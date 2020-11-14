@@ -4,4 +4,6 @@ RUN apt-get update && apt-get -y install apt-transport-https ca-certificates sud
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
     apt-get update && apt-get install docker.io -y && echo "jenkins ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/jenkins && \
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.19.0/bin/linux/amd64/kubectl && chmod +x ./kubectl && \
+    mv ./kubectl /usr/local/bin/kubectl
 USER jenkins
